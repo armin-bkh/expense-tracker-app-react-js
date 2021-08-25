@@ -8,7 +8,7 @@ const OverView = ({ expense, income, addTransactions }) => {
     return ( 
         <>
             <article className={styles.balance}>
-                <span>balance: {expense - income}</span>
+                <span>Balance: {expense - income}</span>
                 <button className={`${styles.btn} ${isShow && styles.cancel}`} onClick={() => setIsShow(prevIsShow => !prevIsShow)}>
                     {isShow ? "Cancel" : "Add"}
                 </button>
