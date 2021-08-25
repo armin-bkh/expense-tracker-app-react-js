@@ -1,0 +1,40 @@
+.formContainer{
+    margin-bottom: 15px;
+    
+    .inputGroup{
+        border: none;
+
+        input[type="text"], input[type="number"]{
+            display: block;
+            width: 100%;
+            border: 1px #ccc solid;
+            border-radius: 5px;
+            padding: 5px 15px;
+            outline: none;
+
+            &:not(:last-child){
+                margin-bottom: 5px;
+            }
+        }
+
+        &:not(:last-child){
+            margin-bottom: 5px;
+        }
+
+        label{
+            font-size: 14px;
+            margin-right: 10px;
+            margin-left: 3px;
+        }
+    }
+
+    button{
+        border-radius: 5px;
+        color: #fff;
+        padding: 5px 15px;
+        font-weight: bold;
+        background-color: #333333;
+        display: block;
+        width: 100%;
+    }
+}

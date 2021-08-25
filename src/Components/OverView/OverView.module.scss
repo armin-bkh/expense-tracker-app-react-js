@@ -1,0 +1,50 @@
+.balance{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span{
+        font-weight: bold;
+    }
+
+    .btn{
+        padding: 5px 15px;
+        background-color: #333333;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .cancel{
+        background-color: #fff;
+        color: #333333;
+    }
+}
+.sumation{
+    display: flex;
+    height: 5rem;
+    div{
+        flex-grow: 1;
+        display: flex;
+        flex-flow: wrap column;
+        border: 1px #ccc solid;
+        border-radius: 5px;
+        padding: 5px;
+        font-weight: bold;
+
+        &:not(:last-child){
+            margin-right: 5px;
+        }
+
+
+        span{
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            color: #00c00a;
+            align-items: center;
+        }
+    }
+}
