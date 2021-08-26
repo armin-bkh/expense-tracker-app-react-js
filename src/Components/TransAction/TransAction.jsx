@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BiTrash } from 'react-icons/bi';
 import styles from "./TransAction.module.scss";
 import Select from 'react-select';
