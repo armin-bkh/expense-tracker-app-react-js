@@ -6,4 +6,9 @@
     box-shadow: 10px 10px 22px #70707077,
                 -10px -10px 22px #ffffff;
     ;
+
+
+    @media screen and (max-width: 767px){
+        width: 20rem;
+    }
 }
