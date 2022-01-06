@@ -7,9 +7,9 @@ const OverView = ({ expense, income, addTransactions }) => {
 
   return (
     <>
+      <DarkModeToggle />
       <article className={"flex items-center justify-between"}>
-        <DarkModeToggle />
-        <span className="text-violet-200 dark:text-violet-900 text-2xl font-bold">
+        <span className="text-violet-200 text-lg lg:text-2xl font-bold">
           Balance: {income - expense}
         </span>
         <button

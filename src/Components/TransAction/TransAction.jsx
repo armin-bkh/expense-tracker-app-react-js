@@ -79,13 +79,13 @@ const TransAction = ({
           ))}
         </ul>
       ) : (
-        <h5 className={`text-violet-200 text-2xl text-center`}>
+        <h5 className={`text-violet-200 text-lg lg:text-2xl text-center`}>
           item not found
         </h5>
       )}
     </article>
   ) : (
-    <h5 className={`mt-20 text-violet-200 text-2xl text-center`}>
+    <h5 className={`mt-20 text-violet-200 text-lg lg:text-2xl text-center`}>
       add some tnx
     </h5>
   );

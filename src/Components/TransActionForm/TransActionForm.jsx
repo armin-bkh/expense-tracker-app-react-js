@@ -76,8 +76,8 @@ const TransActionFrom = ({ addTransactions, setIsShow }) => {
           <span
             className={`flex items-center justify-center w-4 h-4 rounded-sm border ${
               formValues.type === "expense"
-                ? "border-violet-200"
-                : "border-violet-600"
+                ? "border-violet-200 dark:border-violet-700"
+                : "border-violet-600 dark:border-violet-200"
             } mr-3`}
           >
             {formValues.type === "expense" && <IoCheckmarkSharp />}
@@ -104,8 +104,8 @@ const TransActionFrom = ({ addTransactions, setIsShow }) => {
           <span
             className={`flex items-center justify-center w-4 h-4 rounded-sm border ${
               formValues.type === "income"
-                ? "border-violet-200"
-                : "border-violet-600"
+                ? "border-violet-200 dark:border-violet-700"
+                : "border-violet-600 dark:border-violet-200"
             }  mr-3`}
           >
             {formValues.type === "income" && <IoCheckmarkSharp />}
