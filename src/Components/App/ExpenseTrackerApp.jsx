@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import OverView from "../OverView/OverView";
 import TransAction from "../TransAction/TransAction";
-import styles from "./ExpenseTrackerApp.module.scss";
 
 const ExpenseTrackerApp = () => {
   const [expense, setExpense] = useState(0);
@@ -9,6 +8,10 @@ const ExpenseTrackerApp = () => {
   const [transAction, setTransAction] = useState([]);
   const [filterTnx, setFilterTnx] = useState([]);
   const [filter, setFilter] = useState("All");
+
+  useEffect(() => {
+    setTransAction(JSON.parse(localStorage.getItem("TransActions")) || []);
+  }, []);
 
   useEffect(() => {
     let exp = 0,
@@ -22,6 +25,7 @@ const ExpenseTrackerApp = () => {
     setIncome(inc);
     setFilterTnx(transAction);
     filterTransactionHandler(filter);
+    localStorage.setItem("TransActions", JSON.stringify(transAction));
   }, [transAction]);
 
   const addTransactionsHandler = (formValues) => {
@@ -54,7 +58,7 @@ const ExpenseTrackerApp = () => {
   return (
     <section
       className={
-        "bg-violet-400 dark:bg-violet-600 dark:shadow-violet-600/90 p-3 md:p-5 rounded-xl shadow-2xl shadow-violet-400/90 w-full lg:w-10/12 mx-auto"
+        "bg-violet-400 dark:bg-violet-600 dark:shadow-violet-600/90 p-3 md:p-5 transition-all rounded-xl shadow-2xl shadow-violet-400/90 w-full lg:w-10/12 mx-auto"
       }
     >
       <OverView

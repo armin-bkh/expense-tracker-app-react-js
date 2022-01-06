@@ -32,7 +32,8 @@ const TransAction = ({
     option: (provided, state) => ({
       ...provided,
       borderBottom: "1px dotted pink",
-      color: state.isSelected ? "red" : "blue",
+      color: state.isSelected ? "#7c3aed" : "#a78bfa",
+      background: state.isSelected ? "#a78bfa" : null,
       padding: 20,
     }),
     control: (provided) => ({
@@ -46,6 +47,10 @@ const TransAction = ({
       const transition = "opacity 300ms";
       return { ...provided, opacity, transition };
     },
+  };
+
+  const defaultValue = (value) => {
+    return options.find((option) => option.value === value) || null;
   };
 
   return isShow.length ? (
@@ -64,7 +69,7 @@ const TransAction = ({
           styles={customStyles}
           options={options}
           onChange={filterChangeHandler}
-          value={filter.value}
+          value={defaultValue(filter)}
         />
       </div>
       {transActions.length ? (

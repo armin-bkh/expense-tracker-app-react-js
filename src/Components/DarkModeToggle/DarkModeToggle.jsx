@@ -7,7 +7,7 @@ const DarkModeToggle = () => {
   useLayoutEffect(() => {
     const theme = JSON.parse(localStorage.getItem("ExpenseTrackerTheme"));
     setIsDark(theme);
-    document.documentElement.classList.toggle(theme ? "dark" : "light");
+    document.documentElement.classList.toggle(theme && "dark");
   }, []);
 
   useEffect(() => {
