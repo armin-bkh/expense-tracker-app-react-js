@@ -32,7 +32,10 @@ const TransActionFrom = ({ addTransactions, setIsShow }) => {
     } else inputRef.current.focus();
   };
   return (
-    <form onSubmit={submitHandler} className={`flex flex-col py-10 px-5`}>
+    <form
+      onSubmit={submitHandler}
+      className={`flex flex-col py-10 px-2 md:px-5`}
+    >
       <fieldset className="mb-5">
         <input
           ref={inputRef}
@@ -41,7 +44,7 @@ const TransActionFrom = ({ addTransactions, setIsShow }) => {
           placeholder="Amount"
           value={formValues.amount}
           onChange={changeHandler}
-          className="block w-full mb-5 focus:outline-none border-none rounded-sm px-3 py-2 bg-violet-200 shadow-md shadow-violet-200/50 text-violet-600 placeholder:text-violet-400"
+          className="block w-full mb-5 focus:outline-none border-none rounded-sm px-3 py-2 bg-violet-200 dark:bg-violet-700 shadow-md shadow-violet-200/50 dark:shadow-violet-700/50 text-violet-600 placeholder:text-violet-400 dark:text-violet-200"
         />
         <input
           type="text"
@@ -49,16 +52,16 @@ const TransActionFrom = ({ addTransactions, setIsShow }) => {
           placeholder="Description"
           value={formValues.desc}
           onChange={changeHandler}
-          className="block w-full focus:outline-none border-none rounded-sm px-3 py-2 bg-violet-200 shadow-md shadow-violet-200/50 text-violet-600 placeholder:text-violet-400"
+          className="block w-full focus:outline-none border-none rounded-sm px-3 py-2 bg-violet-200 dark:bg-violet-700 shadow-md shadow-violet-200/50 dark:shadow-violet-700/50 text-violet-600 placeholder:text-violet-400 dark:text-violet-200"
         />
       </fieldset>
       <fieldset className={`mb-7 flex`}>
         <label
           htmlFor="ExpenseRD"
-          className={`flex items-center px-5 py-2 mr-5 rounded-md transition duration-500 cursor-pointer shadow-lg ${
+          className={`flex items-center px-5 py-2 mr-5 rounded-md transition duration-500 cursor-pointer shadow-lg text-sm font-bold ${
             formValues.type === "expense"
-              ? "bg-violet-600 text-violet-200 shadow-violet-600/50"
-              : "bg-violet-200 text-violet-600 shadow-violet-200/50"
+              ? "bg-violet-600 dark:bg-violet-200 text-violet-200 dark:text-violet-700 shadow-violet-600/50 dark:shadow-violet-200/50"
+              : "bg-violet-200 dark:bg-violet-700 text-violet-600 dark:text-violet-200 shadow-violet-200/50 dark:shadow-violet-700/50"
           }`}
         >
           <input
@@ -83,10 +86,10 @@ const TransActionFrom = ({ addTransactions, setIsShow }) => {
         </label>
         <label
           htmlFor="IncomeRD"
-          className={`flex items-center px-5 py-2 rounded-md transition duration-500 cursor-pointer shadow-lg ${
+          className={`flex items-center px-5 py-2 rounded-md transition duration-500 cursor-pointer shadow-lg text-sm font-bold ${
             formValues.type === "income"
-              ? "bg-violet-600 text-violet-200 shadow-violet-600/50"
-              : "bg-violet-200 text-violet-600 shadow-violet-200/50"
+              ? "bg-violet-600 dark:bg-violet-200 text-violet-200 dark:text-violet-700 shadow-violet-600/50 dark:shadow-violet-200/50"
+              : "bg-violet-200 dark:bg-violet-700 text-violet-600 dark:text-violet-200 shadow-violet-200/50 dark:shadow-violet-700/50"
           }`}
         >
           <input
@@ -111,7 +114,7 @@ const TransActionFrom = ({ addTransactions, setIsShow }) => {
         </label>
       </fieldset>
       <button
-        className={`bg-violet-200 text-violet-600 hover:bg-violet-600 hover:text-violet-200 transition duration-500 py-2 rounded-md`}
+        className={`bg-violet-200 text-sm font-bold hover:dark:bg-violet-700 text-violet-600 hover:bg-violet-600 hover:text-violet-200 transition duration-500 py-2 rounded-md`}
         type="submit"
       >
         Transaction

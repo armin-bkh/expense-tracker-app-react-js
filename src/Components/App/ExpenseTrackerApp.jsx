@@ -54,7 +54,7 @@ const ExpenseTrackerApp = () => {
   return (
     <section
       className={
-        "bg-violet-400 p-5 rounded-xl shadow-2xl shadow-violet-400/90 lg:w-10/12 mx-auto"
+        "bg-violet-400 dark:bg-violet-600 dark:shadow-violet-600/90 p-3 md:p-5 rounded-xl shadow-2xl shadow-violet-400/90 lg:w-10/12 mx-auto"
       }
     >
       <OverView
