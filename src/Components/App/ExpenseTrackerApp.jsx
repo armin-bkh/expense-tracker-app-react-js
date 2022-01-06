@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import OverView from "../OverView/OverView";
 import TransAction from "../TransAction/TransAction";
-import styles from './ExpenseTrackerApp.module.scss';
+import styles from "./ExpenseTrackerApp.module.scss";
 
 const ExpenseTrackerApp = () => {
   const [expense, setExpense] = useState(0);
@@ -29,36 +29,47 @@ const ExpenseTrackerApp = () => {
   };
 
   const deleteTransactionHandler = (id) => {
-    setTransAction(transAction.filter(tr => tr.id !== id))
-  }
+    setTransAction(transAction.filter((tr) => tr.id !== id));
+  };
 
   const filterTransactionHandler = (selectedOption) => {
-    if(selectedOption === "All") {
-      setFilterTnx(transAction)
-      setFilter("All")
+    if (selectedOption === "All") {
+      setFilterTnx(transAction);
+      setFilter("All");
       return;
-    };
-    const filteredTnx = transAction.filter(tr => tr.type === selectedOption);
+    }
+    const filteredTnx = transAction.filter((tr) => tr.type === selectedOption);
     setFilter(selectedOption);
     setFilterTnx(filteredTnx);
-  }
+  };
 
   const searchTransactionHandler = (value) => {
-    if(value === "") return filterTransactionHandler(filter);
+    if (value === "") return filterTransactionHandler(filter);
     const filteredTnx = filterTnx.filter((tr) =>
       tr.desc.toLowerCase().includes(value.toLowerCase())
-    )
+    );
     setFilterTnx(filteredTnx);
-  }
+  };
 
   return (
-    <section className={styles.appContainer}>
+    <section
+      className={
+        "bg-violet-400 p-5 rounded-xl shadow-2xl shadow-violet-400/90 text-white lg:w-10/12 mx-auto"
+      }
+    >
       <OverView
         expense={expense}
         income={income}
         addTransactions={addTransactionsHandler}
       />
-      <TransAction isShow={transAction} transActions={filterTnx} onDelete={deleteTransactionHandler} onSearch={searchTransactionHandler} filter={filter} onFilter={filterTransactionHandler} />
+      <TransAction
+        isShow={transAction}
+        transActions={filterTnx}
+        onDelete={deleteTransactionHandler}
+        onSearch={searchTransactionHandler}
+        filter={filter}
+        onFilter={filterTransactionHandler}
+      />
     </section>
   );
 };

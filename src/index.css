@@ -5,12 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #e2e2e2;
-  padding: 50px;
 }
 
 code {
@@ -37,3 +31,7 @@ a{
 ul{
   list-style-type: none;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
